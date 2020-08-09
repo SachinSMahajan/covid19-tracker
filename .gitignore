@@ -23,3 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 src/images/corona.jpg
 src/logo.svg
+.vscode/launch.json
