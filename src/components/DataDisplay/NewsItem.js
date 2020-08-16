@@ -13,7 +13,7 @@ function NewsItem(props) {
 
   function RenderNews() {
     if (headlines === undefined) {
-      return <div>Loadig</div>
+      return <div>Loading</div>
     }
     else {
       return (
