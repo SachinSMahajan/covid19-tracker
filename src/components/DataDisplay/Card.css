@@ -1,0 +1,16 @@
+.card-container {
+    margin: 2% 0;
+    width: 100%;
+    margin-right: 2%;
+}
+
+
+.cofirmed{
+    background-image: linear-gradient(2deg, #63c3de, transparent)
+}
+.recovered{
+    background-image: linear-gradient(2deg, #25bf11, transparent)
+}
+.death{
+    background-image: linear-gradient(2deg, #d80a0a, transparent)
+}
