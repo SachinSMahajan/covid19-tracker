@@ -19,7 +19,7 @@ function TabGlobal (props){
         const source = axios.CancelToken.source();
         try {
         
-        const { data: { data } } = await axios.get('/global',{cancelToken:source.token})
+        const { data: { data } } = await axios.get('http://covid-19india-api.herokuapp.com/global',{cancelToken:source.token})
         const { confirmed_cases, active_cases, recovered_cases, death_cases, active_rate, recovered_rate
             , death_rate, new_cases, new_deaths, serious_cases } = data
 

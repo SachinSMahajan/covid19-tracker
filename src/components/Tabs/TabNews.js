@@ -14,7 +14,7 @@ function TabNews (props){
     },[])
 
     const FetchNews =async ()=>{
-        const response = await axios('/headlines')
+        const response = await axios('http://covid-19india-api.herokuapp.com/headlines')
         const {headlines,headlines_summary,image_link} = response.data
         return {
             headlines : headlines,
