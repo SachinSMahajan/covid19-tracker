@@ -23,7 +23,7 @@ function TabIndia(props) {
     }, [])
 
     const FetchDataForIndia = async () => {
-        const data = await axios.get('http://covid19.mathdro.id/api/countries/IND')
+        const data = await axios.get('https://covid19.mathdro.id/api/countries/IND')
         const { confirmed, recovered, deaths } = data.data
 
         return {
@@ -35,7 +35,7 @@ function TabIndia(props) {
     }
 
     const FetchDataForStates = async () => {
-        const response = await axios.get('http://covid19.mathdro.id/api/countries/IND/confirmed')
+        const response = await axios.get('https://covid19.mathdro.id/api/countries/IND/confirmed')
 
         return response.data;
     }
