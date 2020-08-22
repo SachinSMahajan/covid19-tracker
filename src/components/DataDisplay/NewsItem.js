@@ -1,6 +1,7 @@
 import React from 'react'
 import{GetTime,GetDate} from '../../Utility/Utility'
 import './NewsItem.css'
+import noImage from './noimage.png'
 function NewsItem(props) {
   const rendernews = function RenderNews() {
     if (props.data === undefined) {
@@ -16,17 +17,18 @@ function NewsItem(props) {
                 style={{
                   backgroundImage: `url(${item.urlToImage})`, backgroundRepeat: 'no-repeat'
                 }}> */}
-              <img src={item.urlToImage} alt=''></img>
+              {item.image ==='None'? <img src={noImage} alt=''></img> :
+               <img src={item.image} alt=''></img>}
             </div>
             <div className="news-post-info">
               <h1 className="news-post-title">{item.title}</h1>
               <div className="news-post-date">
                 {item.author !== undefined? <span>by {item.author}</span>: null} 
                 <span> </span> 
-              <span>|{GetDate(item.publishedAt)} at {GetTime(item.publishedAt)}</span>
+              <span>|{GetDate(item.published)} at {GetTime(item.published)}</span>
               </div>
               {/* <p className="news-post-description"> {item.description}</p> */}
-              <p className="news-post-content"> {item.content}</p>
+              <p className="news-post-content"> {item.description}</p>
               <a className="read-more" href={item.url} target="blank">Read More</a>
             </div>
           </div>
