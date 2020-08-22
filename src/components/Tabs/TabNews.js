@@ -4,7 +4,7 @@ import NewsItem from '../DataDisplay/NewsItem'
 import './TabNews.css'
 function TabNews (props){
     const [News, setNews] = useState([])
-    const APIKey = '3b0914ef88be4854a4b824e435aad4e2';
+    const APIKey = 'APT-KEY';
     useEffect(()=>{
         const getNews = async ()=>{
             setNews(await FetchNews())
