@@ -2,15 +2,17 @@
     margin: 2% 0;
     width: 100%;
     margin-right: 2%;
+    text-align: center;
 }
-
-
 .cofirmed{
-    background-image: linear-gradient(2deg, #63c3de, transparent)
+    background-image: linear-gradient(2deg, #1774dd, transparent)
 }
 .recovered{
     background-image: linear-gradient(2deg, #25bf11, transparent)
 }
 .death{
     background-image: linear-gradient(2deg, #d80a0a, transparent)
+}
+.category{
+font-weight: 500 !important;
 }

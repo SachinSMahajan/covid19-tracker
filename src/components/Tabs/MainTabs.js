@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import { Tab, Paper, Tabs } from '@material-ui/core'
-import axios from 'axios'
-import CardDisplay from '../DataDisplay/Card'
 import TabGlobal from './TabGlobal'
-import './MainTabs.css'
 import TabIndia from './TabIndia'
 import TabNews  from './TabNews'
+import './MainTabs.css'
 function MainTabs() {
-
     const [value, setValue] = useState(0)
-    
     const handleChange = (event, newValue) => {
         setValue(newValue);
     }

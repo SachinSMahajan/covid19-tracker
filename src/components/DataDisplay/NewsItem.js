@@ -1,53 +1,44 @@
-import React, { useEffect, useState } from 'react'
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-
+import React from 'react'
+import{GetTime,GetDate} from '../../Utility/Utility'
+import './NewsItem.css'
 function NewsItem(props) {
-  const { headlines, summary, image } = props.data
-
-
-  function RenderNews() {
-    if (headlines === undefined) {
+  const rendernews = function RenderNews() {
+    if (props.data === undefined) {
       return <div>Loading</div>
     }
     else {
       return (
-        headlines.map((row, index) => (
-          <Card key={index}>
-            
-              <CardMedia
-                component="img"
-                alt=""
-                height="140"
-                image={image[index]}
-                title="Contemplative Reptile"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  {row}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  {summary[index]}
-                </Typography>
-              </CardContent>
-            
-          </Card>
+        props.data.map((item, index) => (
+
+          <div key={index} className="news-post">
+            <div className="news-post-img">
+              {/* <div className="img"
+                style={{
+                  backgroundImage: `url(${item.urlToImage})`, backgroundRepeat: 'no-repeat'
+                }}> */}
+              <img src={item.urlToImage} alt=''></img>
+            </div>
+            <div className="news-post-info">
+              <h1 className="news-post-title">{item.title}</h1>
+              <div className="news-post-date">
+                {item.author !== undefined? <span>by {item.author}</span>: null} 
+                <span> </span> 
+              <span>|{GetDate(item.publishedAt)} at {GetTime(item.publishedAt)}</span>
+              </div>
+              {/* <p className="news-post-description"> {item.description}</p> */}
+              <p className="news-post-content"> {item.content}</p>
+              <a className="read-more" href={item.url} target="blank">Read More</a>
+            </div>
+          </div>
         )
         )
       )
     }
-
   }
 
   return (
-
-    <div>
-      {RenderNews()}
+    <div className="news-container">
+      {rendernews()}
     </div>
   )
 }

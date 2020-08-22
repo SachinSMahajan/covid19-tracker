@@ -40,7 +40,5 @@ function DataTable(props){
         </TableContainer>
         </div>
         )
-    
-
 }
 export default DataTable;
