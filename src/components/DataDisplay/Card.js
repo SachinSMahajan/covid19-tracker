@@ -1,9 +1,10 @@
 import React from 'react'
 import { Grid, Card, CardContent, Typography } from '@material-ui/core'
 import CountUp from 'react-countup'
+import PropTypes from 'prop-types'
 import './Card.css'
 
-function CardDisplay(props) {
+const CardDisplay = (props) => {
     if (!props.data.confirm) {
         return (<Typography variant="button" display="block" align='center'>
                     Loading...
@@ -57,5 +58,12 @@ function CardDisplay(props) {
         </div>
     )
 }
-
 export default CardDisplay
+
+CardDisplay.propTypes = {
+    data : PropTypes.shape({
+        confirm : PropTypes.number,
+        recovered : PropTypes.number,
+        death : PropTypes.number
+    })
+}

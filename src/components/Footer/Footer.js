@@ -1,6 +1,7 @@
 import React from 'react'
 import './Footer.css'
-function Footer() {
+
+const Footer = () => {
     return (
         <div className="footer-container">
             <span className="">Created by <a href="https://github.com/SachinSMahajan" target="_blank" rel="noopener noreferrer" >

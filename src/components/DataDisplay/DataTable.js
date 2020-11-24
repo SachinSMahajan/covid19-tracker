@@ -6,8 +6,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import PropTypes from 'prop-types'
 import './DataTable.css'
-function DataTable(props){
+
+const DataTable = (props) => {
     const data = props.data
     if(data === undefined) return null;
         return(
@@ -42,3 +44,12 @@ function DataTable(props){
         )
 }
 export default DataTable;
+
+DataTable.propTypes = {
+        data : PropTypes.arrayOf(PropTypes.shape({
+            confirmed : PropTypes.number,
+            active : PropTypes.number,
+            recovered : PropTypes.number,
+            deaths : PropTypes.number
+        }))
+}

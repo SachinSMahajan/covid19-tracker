@@ -4,8 +4,8 @@ import axios from 'axios'
 import Datatable from '../DataDisplay/DataTable'
 import { DateConvertor } from '../../Utility/Utility'
 
-function TabIndia(props) {
-    const [IndiaCaseCount, setIndiaData] = useState([])
+function TabIndia() {
+    const [IndiaCaseCount, setIndiaData] = useState({})
     const [stateData, setStateData] = useState([])
     
     useEffect(() => {

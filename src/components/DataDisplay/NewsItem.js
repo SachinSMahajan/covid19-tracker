@@ -1,8 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import{GetTime,GetDate} from '../../Utility/Utility'
 import './NewsItem.css'
 import noImage from './noimage.png'
-function NewsItem(props) {
+
+const NewsItem = (props) => {
   const rendernews = function RenderNews() {
     if (props.data === undefined) {
       return <div>Loading</div>
@@ -46,3 +48,14 @@ function NewsItem(props) {
 }
 
 export default NewsItem
+
+NewsItem.propTypes = {
+  data : PropTypes.arrayOf(PropTypes.shape({
+    image : PropTypes.string,
+    title : PropTypes.string,
+    published : PropTypes.string,
+    author : PropTypes.string,
+    description : PropTypes.string,
+    url : PropTypes.string,
+  }))
+}

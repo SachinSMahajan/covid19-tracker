@@ -4,7 +4,8 @@ import TabGlobal from './TabGlobal'
 import TabIndia from './TabIndia'
 import TabNews  from './TabNews'
 import './MainTabs.css'
-function MainTabs() {
+
+const MainTabs = () => {
     const [value, setValue] = useState(0)
     const handleChange = (event, newValue) => {
         setValue(newValue);

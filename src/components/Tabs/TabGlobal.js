@@ -6,11 +6,11 @@ import {DateConvertor} from '../../Utility/Utility'
 import CardDisplay from '../DataDisplay/Card'
 import './TabGlobal.css'
 
-function TabGlobal (props){
+const TabGlobal = () => {
     const [globalData, setGlobalData] = useState({})
     const [countyList, setCountryList] = useState([])
-    const [selectedCounty , setSelectedCountry]= useState('IND')
-    const [selecetdCountryData,setSelectedCountryData]= useState(null)
+    const [selectedCounty , setSelectedCountry] = useState('IND')
+    const [selecetdCountryData,setSelectedCountryData] = useState(null)
 
     useEffect( () => {
         const getGlobalData = async () => {
@@ -79,7 +79,7 @@ function TabGlobal (props){
         getSelectedCountryData()
     },[selectedCounty])
 
-    const fetchDataForSelectedCountry =async ()=>{
+    const fetchDataForSelectedCountry = async ()=>{
         try {
             const data =  await axios.get('https://covid19.mathdro.id/api/countries/' + selectedCounty)
             const { confirmed, recovered, deaths ,lastUpdate} = data.data
@@ -119,3 +119,4 @@ function TabGlobal (props){
     )
 }
 export default TabGlobal
+
