@@ -5,7 +5,7 @@ import './TabNews.css'
 
 const TabNews = () => {
     const [News, setNews] = useState([])
-    const APIKey =  process.env.REACT_APP_API_KEY;
+    const APIKey =  process.env.REACT_APP_API_KEY ;
     useEffect(()=>{
         const getNews = async ()=>{
             setNews(await FetchNews())
