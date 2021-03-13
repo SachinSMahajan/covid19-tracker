@@ -15,13 +15,11 @@
 #
 # For more information on GitHub Actions for Azure, refer to https://github.com/Azure/Actions
 # For more samples to get started with GitHub Action workflows to deploy to Azure, refer to https://github.com/Azure/actions-workflow-samples
-on:
-  push:
-    types: [created]
+on: push
 
 env:
   AZURE_WEBAPP_NAME: covid19-tracker    # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: build      # set this to the path to your web app project, defaults to the repository root
+  AZURE_WEBAPP_PACKAGE_PATH: 'build'      # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '10.x'                # set this to the node version to use
 
 jobs:
@@ -40,12 +38,11 @@ jobs:
         # Build and test the project, then
         # deploy to Azure Web App.
         npm install
-        npm run build --if-present
+        CI=false npm run build --if-present
         npm run test --if-present
     - name: add process.json
       run: |
         echo '{ script: "serve", env: { PM2_SERVE_SPA: "true", PM2_SERVE_HOMEPAGE: "/index.html" } }' >> build/process.json
-
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v2
       with:
