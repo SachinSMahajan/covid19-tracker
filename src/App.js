@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header/Header'
-import  MainTabs from './components/Tabs/MainTabs'
+import MainTabs from './components/Tabs/MainTabs'
 import Footer from './components/Footer/Footer'
 
 const App = () => {
